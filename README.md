@@ -1,10 +1,20 @@
-# ud_ml_supervised_learning_charity
-Repo for the ChairtyML project
+Income classifier
 
-This repo contains my 1st project for Udacity's Machine Learning - Introduction Nanodegree program. This is term 1 of the 2-term Data Scientist Nanodegree program.
+This repos contains my machine learning model which classifies census data to predict whether an individual makes at least $50,000. Answering these types of question is important because our model predictions can help us understand our customer base which means we can improve a campaign or process and better target the population.
 
-The goal of this project was to identify individuals who make more then $50,000. The data is taken from a 1994 census. The reason charities are interested with these individuals is that they are more likely to donate to their cause then individuals who do not annually make $50,000.
+There are 2 main files in this repo. A Jupyter Notebook and a .py script.
 
-Version 1 of this upload has the full assignment. Once I get a bit more time I will clean everything up to make it easier to read and follow through.
+The jupyter notebook is used to visually explore the data and build the model while the .py script is a 1 shot application that builds the final model and saves it automatically.
+
+This is a high level overview of the building/design process
+
+In the Jupyter Notebook: 
+1. I explore the data and features to visually understand them and get a feel for what I'm working on.
+2. I apply a log transformation to some of the data that is heavily skewed, this helps our model perform better.
+3. I normalize numerical features. This is to ensure that each numerical feature is treated equally (for example: if column A is between 1 and 1,000,000 but column B is between 1-5, the model might add unreasonable weight and focus on column A because the numbers are larger. Normalizing the features solves this issue.
+4. I one-hot-encode categorical features in order to use them in my model. This allows us to use numerical and categorical information together: for example, we can use someone's Age and his Job to help us with our prediction.
+5. I ran 3 different types of classifiers (Decision Tree Classifier, Bagging Classifier and Random Forest CLassifier) and I ended up choosing the best one for tuning.
+6. Once I chose the best performing model with the default values, I ran a grid-search which is an optimization technique aimed at improving the accuracy and f-score of my chosen model, the Random Forest.
+7. Finally, a graph showing importance of each feature  is displayed. This graph can help us understand and explain to others which features are the most important. In our case, the capital-gain information, the marital status and the age of the individual helped account for to 40% of the importance of our features.
 
 Henry
